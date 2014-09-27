@@ -6,7 +6,7 @@ AngularJS Module that integrate cryptography functionality offers from the [cryp
 Dependencies
 ------------
 - [AngularJS 1.1.4 + ](http://angularjs.org/) (tested with 1.1.4 and 1.2.16)
-- [Crypto-js 3.1.2 AES modul](https://github.com/sytelus/CryptoJS/rollups/aes.js)
+- [Crypto-js 3.1.2 AES modul](https://github.com/sytelus/CryptoJS/tree/master/rollups/aes.js)
 
 ##Install (bower)
 
