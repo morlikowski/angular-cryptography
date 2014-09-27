@@ -29,9 +29,9 @@ Dependencies
 
 ##Usage
 
-* add modul dependency ('mdo-angular-cryptography') to angular
+* add module dependency ('mdo-angular-cryptography') to angular
 ```js
-var demoApp = angular.module('demoApp', ['services', 'angularjs-crypto']);
+var demoApp = angular.module('demoApp', ['services', 'mdo-angular-cryptography']);
 ```
 
 Example Service Usage
@@ -55,4 +55,4 @@ Issues
 License
 --------------
 
-angularjs-crypto is released under the [MIT License](http://opensource.org/licenses/MIT).
+Middleout Angular Cryptography is released under the [Apache License](http://opensource.org/licenses/Apache-2.0).
