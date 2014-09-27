@@ -1,13 +1,23 @@
-// Type definitions for AngularCryptography (mdo-angular-cryptography module)
-// Project: https://github.com/middleout/angular-cryptography
-// Definitions by: Andrei Gabreanu <andrei.gabreanu@middleout.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
+angular.module('mdo-angular-cryptography', [])
+    .provider('$crypto', function CryptoKeyProvider() {
+        var cryptoKey;
 
-declare module mdo.ng.cryptography {
-    interface ICriptService {
-        encrypt(message: string);
-        encrypt(message: string, key: string);
-        decrypt(message: string);
-        decrypt(message: string, key: string);
-    }
-}
+        this.setCryptographyKey = function(value) {
+            this.cryptoKey = value;
+        }
+
+        this.$get = [function(){
+            return {
+                cryptoKey: this.cryptoKey,
+
+                encrypt: function(message, key) {
+                    return CryptoJS.AES.encrypt(message, key ).toString();
+                },
+
+                decrypt: function(message, key) {
+                    return CryptoJS.AES.decrypt(message, key).toString(CryptoJS.enc.Utf8)
+                }
+            }
+        }];
+    });
+

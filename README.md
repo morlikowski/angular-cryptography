@@ -31,18 +31,23 @@ Dependencies
 
 * add module dependency ('mdo-angular-cryptography') to angular
 ```js
-var demoApp = angular.module('demoApp', ['services', 'mdo-angular-cryptography']);
+var demoApp = angular.module('app', ['services', 'mdo-angular-cryptography']);
+```
+
+* setup the encryption key in your config
+```js
+angular.module.('app').config(['$cryptoProvider', function($cryptoProvider){
+	$cryptoProvider.setCryptographyKey('ABCD123');
+});
 ```
 
 Example Service Usage
 
 ```js
-'use strict';
-
 angular.module('app').controller('ExampleController', ['$scope', '$crypto', function($scope, $crypto) {
 
-	var encrypted = $crypto.encrypt('some plain text data', 'SOME_PRIVATE_KEY');
-	var decrypted = $crypto.decrypt(encrypted, 'SOME_PRIVATE_KEY');
+	var encrypted = $crypto.encrypt('some plain text data');
+	var decrypted = $crypto.decrypt(encrypted);
 });
 ```
 
