@@ -3,7 +3,7 @@
 // Definitions by: Andrei Gabreanu <andrei.gabreanu@middleout.com>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
-declare module mdo.angular-cryptography {
+declare module mdo.ng.cryptography {
     interface ICriptService {
         encrypt(message: string);
         encrypt(message: string, key: string);
