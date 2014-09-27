@@ -11,10 +11,20 @@ angular.module('mdo-angular-cryptography', [])
                 cryptoKey: this.cryptoKey,
 
                 encrypt: function(message, key) {
+
+                    if (key === undefined) {
+                        key = this.cryptoKey;
+                    }
+
                     return CryptoJS.AES.encrypt(message, key ).toString();
                 },
 
                 decrypt: function(message, key) {
+
+                    if (key === undefined) {
+                        key = this.cryptoKey;
+                    }
+
                     return CryptoJS.AES.decrypt(message, key).toString(CryptoJS.enc.Utf8)
                 }
             }
