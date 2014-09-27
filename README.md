@@ -20,7 +20,7 @@ Dependencies
 ##Install (manual)
 
 * download [js file](https://github.com/sytelus/CryptoJS/tree/master/rollups/aes.js)
-* download [js file](https://github.com/middleout/angular-cryptography/mdo-angular-cryptography.js)
+* download [js file](https://github.com/middleout/angular-cryptography/blob/master/mdo-angular-cryptography.js)
 * added javascript file to your app html file
 ```html
 <script type='text/javascript' src="js/aes.js"></script>
