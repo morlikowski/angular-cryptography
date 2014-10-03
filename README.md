@@ -49,6 +49,18 @@ angular.module('app').controller('ExampleController', ['$scope', '$crypto', func
 	var encrypted = $crypto.encrypt('some plain text data');
 	var decrypted = $crypto.decrypt(encrypted);
 });
+
+```
+
+or you can use a custom key everytime
+
+```js
+angular.module('app').controller('ExampleController', ['$scope', '$crypto', function($scope, $crypto) {
+
+	var encrypted = $crypto.encrypt('some plain text data', 'some custom key);
+	var decrypted = $crypto.decrypt(encrypted, 'some other custom key');
+});
+
 ```
 
 That's all !
