@@ -11,7 +11,6 @@ Dependencies
 ##Install (bower)
 
 * bower install angular-cryptography
-* bower install cryptojslib
 ```html
 <script type='text/javascript' src="[bower_components/]cryptojslib/rollups/aes.js"></script>
 <script type='text/javascript' src="[bower_components/]angular-cryptography/mdo-angular-cryptography.js"></script>
