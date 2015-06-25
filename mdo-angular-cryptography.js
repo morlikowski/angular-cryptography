@@ -3,17 +3,19 @@ angular.module('mdo-angular-cryptography', [])
         var cryptoKey;
 
         this.setCryptographyKey = function(value) {
-            this.cryptoKey = value;
-        }
+            cryptoKey = value;
+        };
 
         this.$get = [function(){
             return {
-                cryptoKey: this.cryptoKey,
+                getCryptoKey: function() {
+                    return cryptoKey
+                },
 
                 encrypt: function(message, key) {
 
                     if (key === undefined) {
-                        key = this.cryptoKey;
+                        key = cryptoKey;
                     }
 
                     return CryptoJS.AES.encrypt(message, key ).toString();
@@ -22,7 +24,7 @@ angular.module('mdo-angular-cryptography', [])
                 decrypt: function(message, key) {
 
                     if (key === undefined) {
-                        key = this.cryptoKey;
+                        key = cryptoKey;
                     }
 
                     return CryptoJS.AES.decrypt(message, key).toString(CryptoJS.enc.Utf8)
